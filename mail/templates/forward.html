@@ -1,0 +1,91 @@
+{% extends 'gmail.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row" style="margin-top: -400px; margin-left: 300px;">
+    <div class="col-lg-1 col-md-1">
+
+        <a href="snt"><span class="material-symbols-outlined">
+            arrow_back
+            </span></a></div>
+            <div class="col-lg-1 col-md-1" style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+            archive
+            </span></div>
+            <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+                delete
+                </span> </div>
+                <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+                    mark_email_unread
+        </span></div>
+        <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+            schedule
+            </span></div>
+            <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+            <span class="material-symbols-outlined">
+                move_to_inbox
+                </span></div>
+                <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+            label
+            </span></div>
+            <div class="col-lg-1 col-md-1">
+        <span class="material-symbols-outlined"style="margin-left: -15px;">
+            more_vert
+            </span></div>
+    </div>
+    <div class="row"style=" margin-left: 490px; margin-top:50px">
+        {% for i in h %}
+            <div class="col-lg-6 col-md-6">
+            <b style="margin-left:-200px">{{i.3}}</b></div>
+            <div class="col-lg-6 col-md-6" style="margin-left: -410px;">
+            
+                  <h6 style="margin-top: 4px;">&lt;{{i.2}}&gt;</h6>
+                  </div>
+                 
+            
+
+      {% endfor %}
+    </div> 
+    <h5 style="margin-left: 350px; margin-top: 30px;">{{i.4}}</h5>
+    
+    <div class="row" style="margin-left: 300px; margin-top: 250px;" >
+    <div class="col-lg-6 col-md-6">
+        
+              
+        <button style="border-radius: 15px; width: 100px;" id="rply"><span class="material-symbols-outlined">
+            reply
+            </span>reply</button>
+    </div>
+    <div class="col-lg-6 col-md-6" style="margin-left: -300px;">
+        
+        <button style="border-radius: 15px; width: 100px;" id="frwd"><span class="material-symbols-outlined">
+            forward
+            </span><a href="" style="text-decoration: none;">Forward</a></button>
+    </div>
+    
+    </div>
+    <form id="fwrdform">
+       
+    <div class="row">
+        
+        <div class="col-md-12">
+            <P>To:<input type="text"></p>
+            <h6>---Forward message---</h6>
+            <p>From:{{i.3}}</p>
+            <p>Date:</p>
+            <p>Subject:</p>
+            <p>To:</p>
+        </div>
+       
+    </div>
+   
+    </form>
+   
+</div>
+
+{% endblock %}
+

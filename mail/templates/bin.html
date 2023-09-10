@@ -1,0 +1,38 @@
+{% extends 'gmail.html' %}
+{% block content %}
+
+
+ 
+    <div class="sntdiv">
+        <div class="container">
+            {% for i in e %}
+            <div class="row" id="row8">
+               
+                <div class="col-lg-1 col-md-1">
+                    <input type="checkbox" name="" id="col1" />
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <a href="deldata?id={{i.0}}"><span class="material-symbols-outlined" id="star"> delete </span></a>
+                       
+           
+                   </div>
+                <div class="col-lg-2 col-md-2" >
+                    <a href=""  > {{i.3}}</a>
+                </div>
+                <div class="col-lg-2 col-md-2" style="white-space: nowrap;
+                overflow: hidden;
+               
+                text-overflow: ellipsis;">
+                    <a href=""  >{{i.4}}</a>
+                </div>
+                <div class="col-lg-3 col-md-3" >
+                    <a href="">{{i.6}}</a>
+                </div>
+                
+                </div>
+            {% endfor %}
+        
+            
+        </div>
+        </div>
+        {% endblock %} 

@@ -1,0 +1,20 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <form method="post"  >
+            {% csrf_token %}
+        <div class="col-lg-6 col-md-6">
+            <div class="head">
+                <img src="static/image/download.png" alt="" class="logo">
+                    
+                <h3>Find Your email</h3>
+                <p>Enter your phone number or recovery email
+                </p>
+                    </div>
+                    <div class="email">
+                        <input type="text" name="em" value=""  placeholder="Phone number or email" id="a3" required>
+                                
+                        </div>  
+                        <input type="Submit" name="sub" value="Next"> 
+                    {% endblock %}

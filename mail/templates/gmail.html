@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="static/js/mail.js"></script>
+    <link rel="stylesheet" href="static/css/gmail.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    
+
+    <title>Document</title>
+</head>
+<body>
+
+ 
+    <div class="header">
+        <div class="header__left">
+          <span class="material-symbols-outlined" id="btn10">
+            menu
+            </span>
+          
+            <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x_r5.png" width="130px" alt="">
+         
+        </div>
+        <div class="header__middle">
+            <span class="material-symbols-outlined"> search </span>
+            <input type="text" placeholder="Search mail" />
+            <span class="material-symbols-outlined">
+              tune
+              </span>
+            
+          </div>
+          <div class="header__right">
+            <span class="material-symbols-outlined">
+              help
+              </span>
+              <span class="material-symbols-outlined">
+                settings
+                </span>  
+            <span class="material-symbols-outlined"> apps </span>
+            <a href="hm" ><span class="material-symbols-outlined">
+              account_circle
+              
+              </span></a>
+          
+           
+          </div>
+         
+    </div>
+          <div class="mainbody" >           
+            <div class="sidebar">
+              
+              <button class="compose"><span class="material-symbols-outlined"> edit</span> <a href="cmps" style="text-decoration: none;">Compose</a></button>
+              
+              
+              <div class="sidebarOption">
+                <span class="material-symbols-outlined" id="btn1"> inbox </span>
+                
+                <a href="inbox" style="text-decoration: none;"><h3>Inbox</h3></a>
+              </div>
+      
+        <div class="sidebarOption">
+            <span class="material-symbols-outlined" id="btn2"> star </span>
+            <a href="strd"style="text-decoration: none;" ><h3>Starred</h3></a>
+          </div>
+  
+          <div class="sidebarOption">
+            <span class="material-symbols-outlined" id="btn3"> access_time </span>
+            <h3>Snoozed</h3>
+          </div>
+  
+          
+          <div class="sidebarOption">
+            <span class="material-symbols-outlined" id="btn4"> near_me </span>
+            <a href="snt" style="text-decoration: none;"><h3>Sent</h3></a>
+            
+          </div>
+  
+          <div class="sidebarOption">
+            <span class="material-symbols-outlined" id="btn5"> note </span>
+            <h3>Drafts</h3>
+          </div>
+  
+          <div class="sidebarOption">
+            <span class="material-symbols-outlined" id="btn6"> expand_more </span>
+           
+            <h3>More</h3>
+          </div>
+         <div id="btn7"><p>Labels</p></div>
+          <div class="sidebarfooter">
+            
+            <div class="sidebarOption">
+              <span class="material-symbols-outlined" id="btn8"> label </span>
+              <a href="bin"><h3>[imap]/Trash</h3></a>
+              </div>
+              <div class="sidebarOption">
+              <span class="material-symbols-outlined" id="btn9"> label </span>
+              <h3>Unwanted</h3>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="sntdiv">
+            <div class="container" id="contain1" >
+                {% for i in d %}
+                <div class="row" id="row1">
+                    <div class="col-lg-1 col-md-1">
+                        <input type="checkbox" name="" id="col1" />   
+                </div>
+                <div class="col-lg-1 col-md-1">
+                    <a href="stared?id={{i.0}}"><span class="material-symbols-outlined" id="star"> star_border </span></a> 
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <a href="/inmore?inid={{i.0}}">{{i.3}}</a>
+                </div>
+                <div class="col-lg-2 col-md-2"style="white-space: nowrap;
+                overflow: hidden;
+               
+                text-overflow: ellipsis;" >
+                    <a href="/inmore?inid={{i.0}}">{{i.4}}</a>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <a href="/inmore?inid={{i.0}}">{{i.8}}</a>
+                </div>  
+                <div class="col-lg-3 col-md-3">
+                    <a href="deldata1?did={{i.0}}"><span class="material-symbols-outlined">
+                        delete
+                        </span></a>
+                </div>
+            </div>
+            {% endfor %}
+        
+            {% for i in f %}
+            <div class="row" id="row1">
+                <div class="col-lg-1 col-md-1">
+                    <input type="checkbox" name="" id="col1" />   
+            </div>
+            <div class="col-lg-1 col-md-1">
+                <a href="stared?id={{i.0}}"><span class="material-symbols-outlined" id="star"> star_border </span></a> 
+            </div>
+            <div class="col-lg-2 col-md-2">
+                <a href="/inmore?inid={{i.0}}">{{i.3}}</a>
+            </div>
+            <div class="col-lg-2 col-md-2" style="white-space: nowrap;
+            overflow: hidden;
+           
+            text-overflow: ellipsis;">
+                <a href="/inmore?inid={{i.0}}">{{i.4}}</a>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <a href="/inmore?inid={{i.0}}">{{i.7}}</a>
+            </div>  
+            <div class="col-lg-3 col-md-3">
+                <a href="deldata1?did={{i.0}}"><span class="material-symbols-outlined">
+                    delete
+                    </span></a>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+        </div>
+  {% block content %} 
+  {% endblock %} 
+</body>
+</html>

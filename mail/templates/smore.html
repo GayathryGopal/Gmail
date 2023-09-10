@@ -1,0 +1,105 @@
+{% extends 'gmail.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row" style="margin-top: -400px; margin-left: 300px;">
+    <div class="col-lg-1 col-md-1">
+
+        <a href="snt"><span class="material-symbols-outlined">
+            arrow_back
+            </span></a></div>
+            <div class="col-lg-1 col-md-1" style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+            archive
+            </span></div>
+            <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+                delete
+                </span> </div>
+                <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+                    mark_email_unread
+        </span></div>
+        <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+            schedule
+            </span></div>
+            <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+            <span class="material-symbols-outlined">
+                move_to_inbox
+                </span></div>
+                <div class="col-lg-1 col-md-1"style="margin-left: -15px;">
+        <span class="material-symbols-outlined">
+            label
+            </span></div>
+            <div class="col-lg-1 col-md-1">
+        <span class="material-symbols-outlined"style="margin-left: -15px;">
+            more_vert
+            </span></div>
+    </div>
+    <div class="row"style=" margin-left: 490px; margin-top:50px">
+        
+            <div class="col-lg-6 col-md-6">
+            <b style="margin-left:-200px">{{c.3}}</b></div>
+            <div class="col-lg-6 col-md-6" style="margin-left: -410px;">
+            
+                  <h6 style="margin-top: 4px;">&lt;{{c.2}}&gt;</h6>
+                  </div>
+                 
+            
+
+      
+    </div> 
+    <h5 style="margin-left: 350px; margin-top: 30px;">{{c.4}}</h5>
+    
+    <div class="row" style="margin-left: 300px; margin-top: 250px;" >
+    <div class="col-lg-6 col-md-6">
+        
+              
+        <button style="border-radius: 15px; width: 100px;" id="rply"  onclick="show()"><span class="material-symbols-outlined">
+            reply
+            </span>reply</button>
+    </div>
+    <div class="col-lg-6 col-md-6" style="margin-left: -300px;">
+        
+        <button style="border-radius: 15px; width: 100px;" id="frwd" onclick="show1()"><span class="material-symbols-outlined">
+            forward
+            </span>Forward</button>
+           
+    </div>
+    
+    </div>
+    <div id="reply" style="display: none;border: 1px solid rgb(93, 86, 86); margin-left: 300px;  border-radius: 10px;width: 50%;margin-top: -20px;padding: 1rem;">
+        <form method="post">
+            {% csrf_token %}
+            
+            To:<input type="email" name="recepient" value="{{c.2}}" style="border: none;border-bottom:1px solid #333;width:70%" required>
+            <br>
+            subject:<input type="text" name="sub"   style="border: none;"  required>
+            <textarea name="fc" id="fc"  style="border: 1px solid black;width:100%;height: 100px;padding:0.3rem;font-size:0.7rem;margin-top:1.2rem;"></textarea>
+
+            <input type="submit" name="reply" value="Reply" class="fa btn btn-sm btn-primary" style="margin-top: 0.5rem;">
+        </form>
+        
+   </div>
+
+    <div id="forward" style=" display:none;border-top: 1px solid rgb(93, 86, 86);border-left:  1px solid rgb(93, 86, 86);border-right:  1px solid rgb(93, 86, 86); border-radius: 5px;width: 35%; margin-top:-70px;padding: 1rem; margin-left: 250px;">
+   <form method="post">
+    {% csrf_token %}
+    To:<input type="email" name="recepient" style="border: none;border-bottom:1px solid #333;width:70%" required>
+    <p style="margin-top: 0.8rem;">----forwarded message----</p>
+    <p style="font-size: 0.9rem;color:#333;margin-top: 0.8rem;">From:{{c.2}}</p>
+    <p style="font-size: 0.9rem;color:#333">Date:{{c.7}}</p>
+    subject:<input type="text" name="sub"  value="{{c.3}}" style="border: none;"  required>
+   
+    <p style="font-size: 0.9rem;color:#333">To:{{c.1}}</p>
+    <textarea name="fc" id="fc"  style="border-bottom:1px solid black;width: 100%;height: 50px;margin-bottom: 10px;font-size: 0.7rem;" required>{{c.4}}</textarea> 
+    <input type="submit" name="forward" value="Send" class="fa btn btn-sm btn-primary mt-1">
+    </form>
+ 
+</div>
+
+</div>
+
+{% endblock %}
+

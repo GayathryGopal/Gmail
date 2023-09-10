@@ -1,0 +1,60 @@
+{% extends 'home.html' %}
+{% block content %}
+<div class="container-fluid">
+    <form  method="post"  id="form2">
+        {% csrf_token %}
+        <div id="sa">
+         
+        <div class="row">
+            <div class="col-md-6" >
+                <img src="static/image/download.png" alt="" id="logo1">
+                <h4>Create your Google Account</h4>
+
+                <p id="a2">to continue to mail</p>
+
+                <input type="text" name="fn" value=""  placeholder="First name" id="rgfnme" required>
+                <div id="rgdiv">
+                    <input type="text" name="ln" value=""  placeholder="Last name" id="rglname" required>
+                </div>
+                <br>
+                <input type="text" name="us" value=""placeholder="User name" id="rgmail" required >
+                <div class="gmail">          
+                    <span>@gmail.com</span>
+
+                </div>
+
+                <p id="p2">You can use letters,numbers anf full stops</p>
+                <input type="password"  class="password" id="d" value="" name="ps" placeholder="Password" required>
+                <div id="rgpaswd">
+                    <input type="password" class="password" id="e" name="pas" placeholder="Confirm"  onblur="use()" required>
+                  
+                </div>
+                <p id="h" style="color:rgb(255, 51, 0) ; margin-top: 10px; margin-left: 50px; "></p>
+                <p id="p3">Use 8 or more characters with a mix of letters, numbers & symbols</p>
+                <input type="checkbox"  onclick="myfunction()" id="checkbox">Show Password
+                <br><br><br>
+                <a href="hm" class="line4">Sign in instead</a> 
+              
+
+               
+                     <div>
+                         
+                    <!-- <button type="button"  id="bu2"   class="btn btn-primary" onclick="next()">Next</button>  -->
+                  
+                    <!-- <button type="button"  id="bu2"   class="btn btn-primary"  name="subs"><a href="reg">NEXT</a></button>  -->
+                    
+                    <div id="sbtn"> <input type="submit" name="sub" onclick="word()" value="Create" id="sbtn1"></div>
+                    
+               </div>
+               <p style="margin-top:70px; margin-left:50px;color: red;">{{n}}</p>
+            </div>
+            <div class="col-md-6">
+                <img src="static/image/7a5fc469584027.5b8675a4859e3.png"   width="250px" id="regimg"  alt=""/>
+
+                <p id="p4">One account. All of Google </p><p id="p5"> working for you.</p>
+            </div>
+        </div>
+        </div>
+        </form>
+        </div>
+        {% endblock %}  
